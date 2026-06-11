@@ -8,8 +8,11 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
@@ -20,10 +23,12 @@ public class CheckService extends Service {
     private static final long CHECK_INTERVAL = 10 * 1000;
 
     private boolean running = false;
+    private Handler mainHandler;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        mainHandler = new Handler(Looper.getMainLooper());
         createNotificationChannel();
     }
 
@@ -61,7 +66,10 @@ public class CheckService extends Service {
 
         if (total > lastTotal) {
             int newGoods = total - lastTotal;
-            sendNotification("校园二手", "有 " + newGoods + " 件新商品上架，快来看看吧！");
+            String msg = "有 " + newGoods + " 件新商品上架，快来看看吧！";
+            sendNotification("校园二手", msg);
+            mainHandler.post(() ->
+                    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show());
         }
 
         sp.edit()
