@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#FFFFFF">
+    <TextView android:layout_width="match_parent" android:layout_height="56dp"
+        android:text="我的发布" android:textSize="20sp" android:textStyle="bold"
+        android:textColor="#FFFFFF" android:gravity="center" android:background="#6750A4"/>
+    <TextView android:id="@+id/tvEmpty" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:text="还没有发布任何商品" android:textSize="15sp" android:textColor="#999999" android:gravity="center"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView"
+        android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone"/>
+</LinearLayout>

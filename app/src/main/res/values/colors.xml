@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#6750A4</color>
+    <color name="primaryDark">#4F378B</color>
+    <color name="accent">#E8DEF8</color>
+    <color name="background">#FFFBFE</color>
+    <color name="surface">#FFFBFE</color>
+    <color name="textPrimary">#1C1B1F</color>
+    <color name="textSecondary">#49454F</color>
+    <color name="textHint">#C4C4C4</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="price">#FF5722</color>
+    <color name="sold">#9E9E9E</color>
+    <color name="available">#4CAF50</color>
+    <color name="buyBlue">#2196F3</color>
+</resources>

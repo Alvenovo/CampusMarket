@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Publish" android:textSize="26sp" android:textStyle="bold"
+            android:textColor="#333333" android:layout_marginTop="16dp" android:layout_marginBottom="24dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Title" android:textSize="14sp" android:textColor="#666666" android:layout_marginBottom="8dp"/>
+
+        <EditText android:id="@+id/etTitle" android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="Product name" android:maxLength="30" android:paddingHorizontal="16dp"
+            android:background="@drawable/bg_input" android:textSize="16sp" android:layout_marginBottom="16dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Price (CNY)" android:textSize="14sp" android:textColor="#666666" android:layout_marginBottom="8dp"/>
+
+        <EditText android:id="@+id/etPrice" android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="0.00" android:inputType="numberDecimal" android:paddingHorizontal="16dp"
+            android:background="@drawable/bg_input" android:textSize="16sp" android:layout_marginBottom="16dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Contact" android:textSize="14sp" android:textColor="#666666" android:layout_marginBottom="8dp"/>
+
+        <EditText android:id="@+id/etContact" android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="QQ / WeChat / Phone" android:maxLength="50" android:paddingHorizontal="16dp"
+            android:background="@drawable/bg_input" android:textSize="16sp" android:layout_marginBottom="16dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Description" android:textSize="14sp" android:textColor="#666666" android:layout_marginBottom="8dp"/>
+
+        <EditText android:id="@+id/etDesc" android:layout_width="match_parent" android:layout_height="120dp"
+            android:hint="Describe the product..." android:maxLength="500" android:gravity="top"
+            android:padding="16dp" android:background="@drawable/bg_input" android:textSize="15sp" android:layout_marginBottom="16dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="24dp">
+            <ImageView android:id="@+id/ivPreview" android:layout_width="80dp" android:layout_height="80dp"
+                android:scaleType="centerCrop" android:background="@drawable/bg_input"
+                android:src="@android:drawable/ic_menu_gallery"/>
+            <Button android:id="@+id/btnPickImage" android:layout_width="wrap_content" android:layout_height="44dp"
+                android:text="Pick Image" android:textColor="#6750A4" android:textSize="15sp"
+                android:background="@drawable/bg_outline_btn" android:layout_marginStart="16dp" android:paddingHorizontal="20dp"/>
+        </LinearLayout>
+
+        <Button android:id="@+id/btnPublish" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Publish Now" android:textSize="17sp" android:textColor="#FFFFFF"
+            android:background="@drawable/bg_button"/>
+    </LinearLayout>
+</ScrollView>
