@@ -3,6 +3,8 @@ package com.example.campusmarket;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Rect;
@@ -61,11 +63,16 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogout;
     String avatarPath = "";
     ActivityResultLauncher<Intent> avatarPickerLauncher;
+    NetworkReceiver networkReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        networkReceiver = new NetworkReceiver();
+        registerReceiver(networkReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+
 
         panelHome = findViewById(R.id.panelHome);
         panelPublish = findViewById(R.id.panelPublish);
@@ -313,5 +320,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (etSearch != null) loadGoods(etSearch.getText().toString());
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (networkReceiver != null) {
+            unregisterReceiver(networkReceiver);
+        }
     }
 }
