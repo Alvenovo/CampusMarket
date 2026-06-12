@@ -87,10 +87,6 @@ git clone https://github.com/Alvenovo/CampusMarket.git
 
 要求：Android Studio + JDK 11 + Android SDK 24+
 
-## 📄 许可
-
-MIT License
-
 ---
 
-*2315302153 王文东 · 2024*
+*2315302153 Alven · 2024*
